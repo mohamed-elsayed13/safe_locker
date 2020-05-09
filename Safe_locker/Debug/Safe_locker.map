@@ -445,7 +445,7 @@ LOAD c:/program files/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/av
  .debug_frame   0x00000068       0xa8 LCD.o
  .debug_frame   0x00000110       0x40 Safe_locker.o
 
-.debug_str      0x00000000      0x1d3
+.debug_str      0x00000000      0x20c
  *(.debug_str)
  .debug_str     0x00000000       0xc1 EEPROM.o
                                  0xf5 (size before relaxing)
@@ -453,8 +453,8 @@ LOAD c:/program files/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/av
                                 0x157 (size before relaxing)
  .debug_str     0x00000148       0x54 LCD.o
                                 0x17c (size before relaxing)
- .debug_str     0x0000019c       0x37 Safe_locker.o
-                                0x160 (size before relaxing)
+ .debug_str     0x0000019c       0x70 Safe_locker.o
+                                0x154 (size before relaxing)
 
 .debug_loc      0x00000000      0x55d
  *(.debug_loc)

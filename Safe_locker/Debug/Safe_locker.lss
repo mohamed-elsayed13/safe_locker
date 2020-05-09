@@ -23,9 +23,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  00000150  00000000  00000000  000030dc  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000001d3  00000000  00000000  0000322c  2**0
+ 10 .debug_str    0000020c  00000000  00000000  0000322c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    0000055d  00000000  00000000  000033ff  2**0
+ 11 .debug_loc    0000055d  00000000  00000000  00003438  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -1027,7 +1027,8 @@ uint8_t get_password (uint8_t state)
  64c:	98 17       	cp	r25, r24
  64e:	89 f5       	brne	.+98     	; 0x6b2 <get_password+0x25a>
 			 {
-				 EEPROM_write(10,n1);  // to change stored value of password with new one
+				  /*to change stored value of password with new one*/
+				 EEPROM_write(10,n1); 
  650:	8a e0       	ldi	r24, 0x0A	; 10
  652:	90 e0       	ldi	r25, 0x00	; 0
  654:	0e 94 51 00 	call	0xa2	; 0xa2 <EEPROM_write>
@@ -1229,11 +1230,6 @@ int main(void)
 {
 	SETBIT(DDRC,4);
  788:	a4 9a       	sbi	0x14, 4	; 20
-//	EEPROM_write(11,2);
-//	EEPROM_write(12,3);
-//	EEPROM_write(13,4);
-	
-	
 	LCD_init();
  78a:	0e 94 17 01 	call	0x22e	; 0x22e <LCD_init>
 	keypad_init();

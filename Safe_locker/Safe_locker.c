@@ -2,7 +2,7 @@
  * Safe_locker.c
  *
  * Created: 03/05/2020 5:43:27 AM
- *  Author: M
+ *  Author: Mohamed Elsayed
  */ 
 
 
@@ -18,12 +18,6 @@ uint8_t get_password (uint8_t state);
 int main(void)
 {
 	SETBIT(DDRC,4);
-//	EEPROM_write(10,1);  // i used these four lines to write on eeprom location because i coudn't do that wis eta32
-//	EEPROM_write(11,2);
-//	EEPROM_write(12,3);
-//	EEPROM_write(13,4);
-	
-	
 	LCD_init();
 	keypad_init();
 	LCD_write_command(0x1);
@@ -100,7 +94,8 @@ uint8_t get_password (uint8_t state)
 			 }
 			 else if (state==2 && (c1==n1&&c2==n2&&c3==n3&&c4==n4))
 			 {
-				 EEPROM_write(10,n1);  // to change stored value of password with new one
+				  /*to change stored value of password with new one*/
+				 EEPROM_write(10,n1); 
 				 EEPROM_write(11,n2);
 				 EEPROM_write(12,n3);
 				 EEPROM_write(13,n4);
